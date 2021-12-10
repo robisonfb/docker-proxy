@@ -1,0 +1,15 @@
+version: '2'
+services:
+  app:
+    build:
+      args:
+          user: melo
+          uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: laravel-app
+    working_dir: /var/www/
+    volumes:
+      - ./laravel/:/var/www
+    expose:
+      - "80"
