@@ -7,7 +7,7 @@ services:
           uid: 1000
       context: ./
       dockerfile: Dockerfile
-    image: laravel-app
+    image: nginx:alpine
     working_dir: /var/www/
     volumes:
       - ./laravel/:/var/www

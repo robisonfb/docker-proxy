@@ -1,8 +1,15 @@
 version: '2'
 services:
   app:
+    build:
+      args:
+          user: melo
+          uid: 1000
+      context: ./
+      dockerfile: Dockerfile
     image: nginx:alpine
+    working_dir: /var/www/
     volumes:
-      - ./laravel/:/usr/share/nginx/html/
+      - ./laravel/:/var/www
     expose:
       - "80"
